@@ -51,8 +51,8 @@
           "type": "string",
           "title": "Activity Name Display",
           "description": "Choose what to display as the activity name in Discord Rich Presence",
-          "enum": ["default", "title", "artist", "album"],
-          "default": "default"
+          "enum": ["Default", "Track", "Album", "Artist"],
+          "default": "Default"
         },
         "uguuenabled": {
           "type": "boolean",

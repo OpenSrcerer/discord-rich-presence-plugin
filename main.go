@@ -32,10 +32,10 @@ const (
 
 // Activity name display options
 const (
-	activityNameDefault = "default"
-	activityNameTitle   = "title"
-	activityNameArtist  = "artist"
-	activityNameAlbum   = "album"
+	activityNameDefault = "Default"
+	activityNameTrack   = "Track"
+	activityNameArtist  = "Artist"
+	activityNameAlbum   = "Album"
 )
 
 // userToken represents a user-token mapping from the config
@@ -149,12 +149,12 @@ func (p *discordPlugin) NowPlaying(input scrobbler.NowPlayingRequest) error {
 	activityName := "Navidrome"
 	activityNameOption, _ := pdk.GetConfig(activityNameKey)
 	switch activityNameOption {
-	case activityNameTitle:
+	case activityNameTrack:
 		activityName = input.Track.Title
-	case activityNameArtist:
-		activityName = input.Track.Artist
 	case activityNameAlbum:
 		activityName = input.Track.Album
+	case activityNameArtist:
+		activityName = input.Track.Artist
 	}
 
 	// Send activity update

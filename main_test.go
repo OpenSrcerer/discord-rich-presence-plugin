@@ -225,10 +225,10 @@ var _ = Describe("discordPlugin", func() {
 				Expect(sentPayload).To(ContainSubstring(fmt.Sprintf(`"name":"%s"`, expectedName)))
 			},
 			Entry("defaults to Navidrome when not configured", "", false, "Navidrome"),
-			Entry("defaults to Navidrome with explicit default value", "default", true, "Navidrome"),
-			Entry("uses track title when configured", "title", true, "Test Song"),
-			Entry("uses track artist when configured", "artist", true, "Test Artist"),
-			Entry("uses track album when configured", "album", true, "Test Album"),
+			Entry("defaults to Navidrome with explicit default value", "Default", true, "Navidrome"),
+			Entry("uses track title when configured", "Track", true, "Test Song"),
+			Entry("uses track album when configured", "Album", true, "Test Album"),
+			Entry("uses track artist when configured", "Artist", true, "Test Artist"),
 		)
 	})
 
